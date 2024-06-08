@@ -1,0 +1,14 @@
+[Unit]
+Description=HTTP网络连通性测试，监听80端口，返回204。
+After=network.target
+
+[Service]
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+ExecStart=/usr/local/bin/generate_204
+User=nobody
+StandardError=journal
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
