@@ -1,10 +1,10 @@
 [package]
 name = "generate_204"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-hyper = { version = "1", features = ["full"] }
-tokio = { version = "1", features = ["full"] }
+hyper = { version = "1", features = ["server", "http1"] }
+tokio = { version = "1", features = ["net", "macros", "rt-multi-thread", "time"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
 http-body-util = "0.1"
-hyper-util = { version = "0.1", features = ["full"] }
